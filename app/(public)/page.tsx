@@ -13,12 +13,6 @@ export default function Home() {
         </h1>
         <div>Tiny missions. Big office mischief.</div>
         <p className="mt-6">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat.
-        </p>
-        <p className="mt-4">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
           dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -28,7 +22,7 @@ export default function Home() {
           facilisi, vivamus at augue eget arcu dictum varius duis at consectetur.
           Pellentesque habitant morbi tristique senectus et netus et malesuada fames.
           Aenean lacinia bibendum nulla sed consectetur, donec ullamcorper nulla non metus.
-        </p>
+          Maecenas faucibus mollis interdum, integer posuere erat a ante venenatis dapibus.        </p>
       </div>
     </div>
   )
