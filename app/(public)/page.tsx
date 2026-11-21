@@ -23,6 +23,11 @@ export default function Home() {
           Pellentesque habitant morbi tristique senectus et netus et malesuada fames.
           Aenean lacinia bibendum nulla sed consectetur, donec ullamcorper nulla non metus.
           Maecenas faucibus mollis interdum, integer posuere erat a ante venenatis dapibus.        </p>
+        <p className="mt-4">
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+          cubilia curae. Praesent sapien massa, convallis a pellentesque nec,
+          egestas non nisi. Nulla porttitor accumsan tincidunt.
+        </p>
       </div>
     </div>
   )
