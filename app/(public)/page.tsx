@@ -27,6 +27,7 @@ export default function Home() {
           Curabitur pretium tincidunt lacus, nec gravida nisi blandit vel. Nulla
           facilisi, vivamus at augue eget arcu dictum varius duis at consectetur.
           Pellentesque habitant morbi tristique senectus et netus et malesuada fames.
+          Aenean lacinia bibendum nulla sed consectetur, donec ullamcorper nulla non metus.
         </p>
       </div>
     </div>
