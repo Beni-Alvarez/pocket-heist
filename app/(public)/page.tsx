@@ -28,6 +28,10 @@ export default function Home() {
           cubilia curae. Praesent sapien massa, convallis a pellentesque nec,
           egestas non nisi. Nulla porttitor accumsan tincidunt.
         </p>
+        <p className="mt-4">
+          Quisque velit nisi, pretium ut lacinia in, elementum id enim. Proin eget
+          tortor risus, sed porttitor lectus nibh.
+        </p>
       </div>
     </div>
   )
