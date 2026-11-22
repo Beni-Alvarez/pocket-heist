@@ -25,15 +25,31 @@ Current state: this is a starter project. The pages are mostly placeholder headi
 - `npm test` — Vitest in watch mode (jsdom, globals enabled, setup in `vitest.setup.ts`)
 - Single test: `npx vitest run tests/components/Navbar.test.tsx` (add `-t "<name>"` to filter by test name)
 
+## Route Organisation
+
+Route groups (folders in parentheses don't appear in the URL) split `app/` into two sections, each with its own layout:
+
+- `app/(public)/` — pages for logged-out users. The layout wraps children in `<main className="public">`, which `globals.css` styles.
+  - `/` — splash page; meant only to redirect (logged in → `/heists`, otherwise → `/login`)
+  - `/login`, `/signup` — auth pages
+  - `/preview` — scratch page for previewing newly built UI components
+- `app/(dashboard)/` — the main app. The layout renders `<Navbar />` plus `<main>`.
+  - `/heists` — heist lists (active, assigned by you, expired)
+  - `/heists/create` — create a new heist
+  - `/heists/[id]` — heist details
+
 ## Architecture
 
 Next.js App Router app (Next 16, React 19, TypeScript strict, Tailwind v4). It is a starter project for the Claude Code Masterclass.
 
-- Route groups split the app into two layouts under `app/`:
-  - `app/(public)/` — splash page, `login`, `signup`, `preview`. Layout wraps children in `<main className="public">`, which `globals.css` styles for public pages.
-  - `app/(dashboard)/` — `heists`, `heists/create`, `heists/[id]`. Layout renders `<Navbar />` plus `<main>`.
 - `app/layout.tsx` is the root layout; it imports `@/app/globals.css` and sets metadata.
 - Shared components live in `components/<Name>/` with an `index.ts` barrel, the component file, and a CSS Module (e.g. `Navbar.module.css`). Import via `@/components/<Name>`.
 - Path alias `@/*` maps to the repo root (tsconfig, also used by Vitest via `vite-tsconfig-paths`).
 - Theme colors (`primary`, `secondary`, `dark`, `light`, `lighter`, `success`, `error`, `heading`, `body`) are defined in the Tailwind `@theme` block in `app/globals.css` and usable as Tailwind utilities.
 - Tests live in `tests/` (mirroring `components/`) and use Testing Library with `@testing-library/jest-dom`.
+
+## MANUALLY ADDED PREFERENCES
+- do not use semicolons for javascript or typescript code.
+- do not apply tailwind classes directly in component templates unless essential or just 1 at most. if an element needs more than a single tailwind class, combine them into a custom class using the '@apply" directive.
+- use minimal project dependencies wehre possible.
+use the newer 'git switch -c' command to switch to new branches, not 'git checkout'.
