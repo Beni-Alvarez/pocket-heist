@@ -52,4 +52,4 @@ Next.js App Router app (Next 16, React 19, TypeScript strict, Tailwind v4). It i
 - do not use semicolons for javascript or typescript code.
 - do not apply tailwind classes directly in component templates unless essential or just 1 at most. if an element needs more than a single tailwind class, combine them into a custom class using the '@apply" directive.
 - use minimal project dependencies wehre possible.
-use the 'git switch -c' command to switch to new branches, not 'git checkout'.
+use the newer 'git switch -c' command to switch to new branches, not 'git checkout'.
