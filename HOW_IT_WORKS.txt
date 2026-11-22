@@ -1,0 +1,77 @@
+POCKET HEIST - HOW IT WORKS
+===========================
+
+1. WHAT IT IS
+-------------
+A web app for playful office pranks ("Tiny missions. Big office mischief.").
+Users create small "heists" and assign them to colleagues.
+
+2. USER FLOW
+------------
+  Visit "/"  ->  splash page decides where to go:
+                   logged in      -> /heists
+                   not logged in  -> /login
+  Login / Signup  ->  /heists (dashboard)
+  Dashboard       ->  view heists, create a heist, open a heist's details
+
+3. PAGES
+--------
+Public (no navbar):
+  /                splash page (redirect only)
+  /login           log in
+  /signup          create an account
+  /preview         scratch page for previewing new UI components
+
+Dashboard (navbar on top):
+  /heists          three lists: your active heists, heists you've assigned,
+                   all expired heists
+  /heists/create   form to create a new heist
+  /heists/[id]     details of a single heist
+
+4. HOW IT IS BUILT
+------------------
+- Next.js App Router. Folders in parentheses, (public) and (dashboard),
+  are route groups: they give each section its own layout without
+  changing the URL.
+- Public layout: plain centered content.
+  Dashboard layout: <Navbar /> + page content.
+- Styling: Tailwind CSS (theme colours in app/globals.css) plus CSS Modules
+  for components.
+- Shared components live in components/ and are imported with "@/".
+
+5. MAIN FOLDERS
+---------------
+app/
+  The heart of the app. In Next.js App Router, folders inside app/ become
+  URLs and page.tsx files become pages. Holds the root layout, global CSS
+  and the two route groups, (public) and (dashboard).
+
+components/
+  Reusable UI pieces shared across pages (currently Navbar). Each component
+  gets its own folder with the component file, a CSS Module and an index.ts
+  so it can be imported as "@/components/Navbar".
+
+tests/
+  Vitest + React Testing Library tests. Mirrors the structure of
+  components/ (e.g. tests/components/Navbar.test.tsx).
+
+public/
+  Static files served as-is from the site root (currently an image).
+  Put images and other assets here.
+
+.claude/
+  Claude Code settings for this project (settings.local.json).
+
+.next/  and  node_modules/
+  Generated. .next/ is Next.js build/dev output and node_modules/ holds
+  installed dependencies. Neither is edited by hand or committed.
+
+Root config files (package.json, tsconfig.json, next.config.ts,
+eslint.config.mjs, postcss.config.mjs, vitest.config.mts) set up
+dependencies and scripts, TypeScript, Next.js, linting, Tailwind and tests.
+
+6. CURRENT STATE
+----------------
+Starter project. Pages are mostly placeholder headings. There is no
+authentication, backend or database yet, so the redirect logic, forms and
+heist lists are still to be built.
