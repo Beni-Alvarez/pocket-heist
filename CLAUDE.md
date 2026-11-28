@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+@AGENTS.md
+
 ## Project Overview
 
 Pocket Heist ("Tiny missions. Big office mischief.") is a web app for playful office pranks. Users create small "heists" and assign them to colleagues. The dashboard groups heists into those assigned to you (active), those you've assigned to others, and expired ones. There is also a detail view per heist, plus login and signup. The splash page (`/`) is meant to redirect to `/heists` when logged in and to `/login` otherwise.
@@ -48,8 +50,9 @@ Next.js App Router app (Next 16, React 19, TypeScript strict, Tailwind v4). It i
 - Theme colors (`primary`, `secondary`, `dark`, `light`, `lighter`, `success`, `error`, `heading`, `body`) are defined in the Tailwind `@theme` block in `app/globals.css` and usable as Tailwind utilities.
 - Tests live in `tests/` (mirroring `components/`) and use Testing Library with `@testing-library/jest-dom`.
 
-## MANUALLY ADDED PREFERENCES
-- do not use semicolons for javascript or typescript code.
-- do not apply tailwind classes directly in component templates unless essential or just 1 at most. if an element needs more than a single tailwind class, combine them into a custom class using the '@apply" directive.
-- use minimal project dependencies wehre possible.
-use the newer 'git switch -c' command to switch to new branches, not 'git checkout'.
+## Preferences
+
+- Do not use semicolons in JavaScript or TypeScript code.
+- Use at most one Tailwind class directly on an element in component templates. If it needs more, combine them into a custom class with the `@apply` directive.
+- Use as few project dependencies as possible.
+- Create branches with `git switch -c <name>` and switch with `git switch <name>`, not `git checkout`.
